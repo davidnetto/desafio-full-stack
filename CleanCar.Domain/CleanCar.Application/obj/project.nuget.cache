@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Th1OKe24+sFnqYE6YK5B9foZ+yvYGhlcun/OSKQIyLwruVv441qcqT3lbeNGS35xoxVUTtVOCoubPQKxhVesTw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\David\\Documents\\repos\\CleanCar.Domain\\CleanCar.Application\\CleanCar.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,99 @@
+-- Criar o banco de dados se ele não existir
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'SistemaLocadoras')
+BEGIN
+    CREATE DATABASE SistemaLocadoras;
+END
+GO
+
+-- Use o banco de dados "SistemaLocadoras"
+USE SistemaLocadoras;
+GO
+
+-- Tabela de Locadoras
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Locadoras')
+BEGIN
+    CREATE TABLE Locadoras (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        NomeFantasia VARCHAR(255) NOT NULL,
+        RazaoSocial VARCHAR(255) NOT NULL,
+        CNPJ VARCHAR(14) UNIQUE NOT NULL,
+        Email VARCHAR(255) NOT NULL,
+        Telefone VARCHAR(20) NOT NULL
+    );
+END
+GO
+
+-- Tabela de Endereços
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Enderecos')
+BEGIN
+    CREATE TABLE Enderecos (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        CEP VARCHAR(10) NOT NULL,
+        Rua VARCHAR(255) NOT NULL,
+        Numero INT NOT NULL,
+        Bairro VARCHAR(255) NOT NULL,
+        Estado VARCHAR(2) NOT NULL,
+        Cidade VARCHAR(255) NOT NULL,
+        LocadoraID INT,
+        FOREIGN KEY (LocadoraID) REFERENCES Locadoras(ID)
+    );
+END
+GO
+
+-- Tabela de Montadoras
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Montadoras')
+BEGIN
+    CREATE TABLE Montadoras (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        Nome VARCHAR(255) UNIQUE NOT NULL
+    );
+END
+GO
+
+-- Tabela de Modelos
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Modelos')
+BEGIN
+    CREATE TABLE Modelos (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        Nome VARCHAR(255) UNIQUE NOT NULL,
+        MontadoraID INT,
+        FOREIGN KEY (MontadoraID) REFERENCES Montadoras(ID)
+    );
+END
+GO
+
+-- Tabela de Veículos
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Veiculos')
+BEGIN
+    CREATE TABLE Veiculos (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        NumeroPortas INT NOT NULL,
+        ModeloID INT,
+        Cor VARCHAR(50) NOT NULL,
+        Fabricante VARCHAR(255) NOT NULL,
+        AnoModelo INT NOT NULL,
+        AnoFabricacao INT NOT NULL,
+        Placa VARCHAR(10) UNIQUE NOT NULL,
+        Chassi VARCHAR(17) UNIQUE NOT NULL,
+        DataCriacao DATETIME NOT NULL,
+        LocadoraID INT,
+        FOREIGN KEY (ModeloID) REFERENCES Modelos(ID),
+        FOREIGN KEY (LocadoraID) REFERENCES Locadoras(ID)
+    );
+END
+GO
+
+-- Tabela de Log
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Log')
+BEGIN
+    CREATE TABLE Log (
+        ID INT PRIMARY KEY IDENTITY(1,1),
+        VeiculoID INT NOT NULL,
+        LocadoraID INT NOT NULL,
+        DataInicio DATETIME NOT NULL,
+        DataFim DATETIME,
+        FOREIGN KEY (VeiculoID) REFERENCES Veiculos(ID),
+        FOREIGN KEY (LocadoraID) REFERENCES Locadoras(ID)
+    );
+END
+GO

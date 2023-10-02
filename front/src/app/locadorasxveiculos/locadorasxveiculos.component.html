@@ -1,0 +1,21 @@
+    <!-- Tabela de Resultados -->
+    <div class="container">
+      <h1>Locadoras X Modelos  </h1>
+
+      <table class="table col-12">
+        <thead>
+          <tr>
+            <th>Locadora</th>
+            <th>Modelo</th>
+            <th>Quantidade Veiculos Por Modelo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of resultados">
+            <td>{{ item.locadoraNome }}</td>
+            <td>{{ item.nome }}</td>
+            <td>{{ item.quantidadeVeiculosPorModelo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

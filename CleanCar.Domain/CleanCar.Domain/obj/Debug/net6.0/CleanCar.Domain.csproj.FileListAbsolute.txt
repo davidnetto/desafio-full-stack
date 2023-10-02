@@ -1,0 +1,11 @@
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\bin\Debug\net6.0\CleanCar.Domain.deps.json
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\bin\Debug\net6.0\CleanCar.Domain.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\bin\Debug\net6.0\CleanCar.Domain.pdb
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\CleanCar.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\CleanCar.Domain.AssemblyInfoInputs.cache
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\CleanCar.Domain.AssemblyInfo.cs
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\CleanCar.Domain.csproj.CoreCompileInputs.cache
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\CleanCar.Domain.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\refint\CleanCar.Domain.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\CleanCar.Domain.pdb
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Domain\obj\Debug\net6.0\ref\CleanCar.Domain.dll

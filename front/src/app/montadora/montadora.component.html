@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <table class="col-12">
+        <tr>
+          <h2>{{ isEdicao ? 'Editar Montadora' : 'Cadastrar Montadora' }}</h2>
+
+          <td class="actions-column text-end">
+            <button (click)="listagem()" class=" btn btn-info text-white ">
+              <i class="fas fa-list"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+
+      <form [formGroup]="montadora" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" formControlName="nome" required>
+          <div class="invalid-feedback" *ngIf="montadora.get('nome')?.invalid && montadora.get('nome')?.touched">
+            Nome é obrigatório.
+          </div>
+        </div>
+        <div class="actions-column text-end">
+          <button type="submit" [ngClass]="isEdicao ? 'btn-primary' : 'btn-success'" class="btn mt-3 ">
+            <i [ngClass]="isEdicao ? 'bi bi-pencil' : 'bi bi-plus'"></i>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <!-- Conteúdo do modal -->
+    <ng-content></ng-content>
+    <button>Fechar</button>
+  </div>
+</div>

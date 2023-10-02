@@ -1,0 +1,7 @@
+/* styles.css ou styles.scss */
+
+.actions-column {
+    width: 1%; /* Defina a largura desejada da coluna aqui */
+    white-space: nowrap; /* Impede que o conteúdo da coluna seja quebrado em várias linhas */
+  }
+  /* Option 2: Import via CSS */

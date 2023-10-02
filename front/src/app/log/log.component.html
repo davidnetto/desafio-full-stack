@@ -1,0 +1,24 @@
+    <!-- Tabela de Resultados -->
+    <div class="container">
+        <h1>Log  </h1>
+  
+        <table class="table col-12">
+          <thead>
+            <tr>
+              <th>VeiculoID</th>
+              <th>LocadoraID</th>
+              <th>Data Inicio</th>
+              <th>Data Fim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of resultados">
+              <td>{{ item.veiculoId }}</td>
+              <td>{{ item.locadoraId }}</td>
+              <td>{{ item.dataInicio }}</td>
+              <td>{{ item.dataFim }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  

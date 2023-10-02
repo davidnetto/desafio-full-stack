@@ -1,0 +1,50 @@
+<!-- montadora-lista.component.html -->
+<div class="container">
+    <div class="row">
+      
+      <div class="col-md-12">
+      
+          <table class="col-12">
+              <tr >
+                <h2>Modelos</h2>
+                
+                <td class="actions-column text-end">
+                  <button (click)="cadastrarModelo()" class=" btn btn-success ">
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </td>
+              </tr>
+          </table>
+       
+  
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Montadora Nome</th>
+                <th class="actions-column text-end">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of modelos">
+                <td>{{ item.id }}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.nomeMontadora }}</td>
+                <td class="actions-column text-end">
+                  <button class="btn btn-primary me-2" (click)="atualizarModelo(item.id)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-danger" (click)="deletarModelo(item.id)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

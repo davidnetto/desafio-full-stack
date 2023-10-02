@@ -1,0 +1,59 @@
+<!-- veiculo-lista.component.html -->
+<div class="container">
+    <div class="row">
+      
+      <div class="col-md-12">
+      
+          <table class="col-12">
+              <tr >
+                <h2>Veiculos</h2>
+                
+                <td class="actions-column text-end">
+                  <button (click)="cadastrarVeiculo()" class=" btn btn-success ">
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </td>
+              </tr>
+          </table>
+         
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Numero Portas</th>
+                <th>Cor</th>
+                <th>Fabricante</th>
+                <th>Ano Modelo</th>
+                <th>Ano Fabricação</th>
+                <th>Placa</th>
+                <th>Chassi</th>
+                <th class="actions-column text-end">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let veiculo of veiculos">
+                <td>{{ veiculo.id }}</td>
+                <td>{{ veiculo.numeroPortas }}</td>
+                <td>{{ veiculo.cor }}</td>
+                <td>{{ veiculo.fabricante }}</td>
+                <td>{{ veiculo.anoModelo }}</td>
+                <td>{{ veiculo.anoFabricacao }}</td>
+                <td>{{ veiculo.placa }}</td>
+                <td>{{ veiculo.chassi }}</td>
+                <td class="actions-column text-end">
+                  <button class="btn btn-primary me-2" (click)="atualizarVeiculo(veiculo.id)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-danger" (click)="deletarVeiculo(veiculo.id)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

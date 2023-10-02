@@ -1,0 +1,71 @@
+<!-- relatorio.component.html -->
+
+<div class="container">
+    <h1>Locadoras X Veículos </h1>
+  
+    <div class="row ">
+      <div class="form-group col-6">
+        <label for="locadoraFilter">Locadora:</label>
+        <input type="text" id="locadoraFilter" [(ngModel)]="locadoraFilter"  class="form-control">
+      </div>
+    
+      <!-- Filtro de Modelo -->
+      <div class="form-group col-6">
+        <label for="modeloFilter">Modelo:</label>
+        <select id="modeloFilter" [(ngModel)]="modeloFilter" class="form-control">
+          <option value="0">Todos</option>
+          <option *ngFor="let item of modelos" [value]="item.id">{{ item.nome }}</option>
+        </select>
+      </div>
+    
+    </div>
+
+    <div class="row mt-2">
+      <div class="form-group col-6">
+        <label for="dataInicioFilter">Data de Criação (Início):</label>
+        <input type="date" id="dataInicioFilter" [(ngModel)]="dataInicioFilter" class="form-control">
+      </div>
+      <div class="form-group  col-6">
+        <label for="dataFimFilter">Data de Criação (Fim):</label>
+        <input type="date" id="dataFimFilter" [(ngModel)]="dataFimFilter" class="form-control">
+      </div>
+    </div>
+
+
+    
+    <div class=" actions-column text-end">
+      <button type="submit" (click)="limparFiltros()" class="btn m-2 btn-danger text-end">
+        Limpar 
+      </button>
+
+      <button type="submit" (click)="filtrarVeiculos()" class="btn btn-primary">
+        Filtrar
+      </button>
+    </div>
+
+    <!-- Filtro de Locadora -->
+
+    <!-- Filtro de Data de Criação -->
+
+  
+    <!-- Tabela de Resultados -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Locadora</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Data de Criação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of resultados">
+          <td>{{ item.locadoraNome }}</td>
+          <td>{{ item.modeloNome }}</td>
+          <td>{{ item.placa }}</td>
+          <td>{{ item.dataCriacaoInicio | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-md-12">
+    
+      <table class="col-12">
+        <tr>
+          <h2>{{ isEdicao ? 'Editar Modelo' : 'Cadastrar Modelo' }}</h2>
+  
+          <td class="actions-column text-end">
+            <button (click)="listagem()" class=" btn btn-info text-white ">
+              <i class="fas fa-list"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+
+      <form [formGroup]="modelo" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        <div class="row">
+
+          <div class="form-group col-6">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" formControlName="nome" required>
+            <div class="invalid-feedback" *ngIf="modelo.get('nome')?.invalid && modelo.get('nome')?.touched">
+              Nome é obrigatório.
+            </div>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="montadoraId">Montadora:</label>
+            <select class="form-control" formControlName="montadoraId" required>
+              <option value='' selected>Selecione</option>
+              <option *ngFor="let montadora of montadorasResult" [value]="montadora.id">{{ montadora.nome }}</option>
+            </select>
+            <div *ngIf="isSelectInvalid" class="text-danger">Por favor, selecione uma montadora.</div>
+          </div>
+    
+          <div class="actions-column text-end">
+            <button type="submit" [ngClass]="isEdicao ? 'btn-primary' : 'btn-success'" class="btn mt-3 ">
+              <i [ngClass]="isEdicao ? 'bi bi-pencil' : 'bi bi-plus'"></i>
+            </button>
+          </div>
+    
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showModal" class="modal">
+  <div class="modal-content">
+    <!-- Conteúdo do modal -->
+    <ng-content></ng-content>
+    <button>Fechar</button>
+  </div>
+</div>
+
+

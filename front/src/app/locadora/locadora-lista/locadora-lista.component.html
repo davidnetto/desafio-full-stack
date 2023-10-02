@@ -1,0 +1,57 @@
+<!-- montadora-lista.component.html -->
+<div class="container">
+    <div class="row">
+      
+      <div class="col-md-12 ">
+      
+          <table class="col-12">
+              <tr >
+                <h2>Locadoras</h2>
+                
+                <td class="actions-column text-end">
+                  <button (click)="cadastrarLocadora()" class=" btn btn-success ">
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </td>
+              </tr>
+          </table>
+       
+  
+     
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome Fantasia</th>
+              <th>Razão Social</th>
+              <th>CNPJ</th>
+              <th>Email</th>
+              <th>Telefonel</th>
+              <th class="actions-column text-end">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of locadoras">
+              <td>{{ item.id }}</td>
+              <td>{{ item.nomeFantasia }}</td>
+              <td>{{ item.razaoSocial }}</td>
+              <td>{{ item.cnpj }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.telefone }}</td>
+              <td class="actions-column text-end">
+                <button class="btn btn-primary me-2" (click)="atualizarLocadora(item.id)">
+                  <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-danger" (click)="deletarLocadora(item.id)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

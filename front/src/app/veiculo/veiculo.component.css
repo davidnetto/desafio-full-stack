@@ -1,0 +1,19 @@
+/* Estilo para destacar campos inválidos */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 14px;
+  }
+  
+  .element-error {
+      border: 1px solid red;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+
+  

@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+        <table class="col-12">
+          <tr >
+            <h2>{{ isEdicao ? 'Editar Veiculo' : 'Cadastrar Veiculo' }}</h2>
+            
+            <td class="actions-column text-end">
+              <button (click)="listagem()" class=" btn btn-info text-white ">
+                <i class="fas fa-list"></i>
+              </button>
+            </td>
+          </tr>
+      </table>
+        <form [formGroup]="veiculo" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+          <div class="row">
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="numeroPortas">Numero Portas</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('numeroPortas')?.invalid && veiculo.get('numeroPortas')?.touched}"
+                type="text"  appNumeric class="form-control" id="numeroPortas" formControlName="numeroPortas" required>
+            </div>
+  
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="cor">Cor</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('cor')?.invalid && veiculo.get('cor')?.touched}"
+                type="text" class="form-control" id="Cor" formControlName="cor" required>
+            </div>
+  
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="fabricante">Fabricante</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('fabricante')?.invalid && veiculo.get('fabricante')?.touched}"
+                type="text" class="form-control" id="fabricante" formControlName="fabricante" required>
+            </div>
+  
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="anoModelo">Ano Modelo</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('anoModelo')?.invalid && veiculo.get('anoModelo')?.touched}"
+                appNumeric type="text" class="form-control" id="anoModelo" formControlName="anoModelo" required>
+            </div>
+  
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="anoFabricacao">Ano Fabricação</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('anoFabricacao')?.invalid && veiculo.get('anoFabricacao')?.touched}"
+                appNumeric type="text" class="form-control" id="anoFabricacao" formControlName="anoFabricacao" required>
+            </div>
+  
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="placa">Placa</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('placa')?.invalid && veiculo.get('placa')?.touched}"
+                type="text" class="form-control" id="placa" formControlName="placa" required>
+            </div>
+  
+            <div class="form-group mb-3 col-4">
+              <label class="mb-2" for="chassi">Chassi</label>
+              <input
+                [ngClass]="{'element-error': veiculo.get('chassi')?.invalid && veiculo.get('chassi')?.touched}"
+                type="text" class="form-control" id="chassi" formControlName="chassi" required>
+            </div>
+            
+            <div class="form-group mb-3 col-4" >
+              <label class="mb-2" for="modeloId">Modelo</label>
+              <select 
+              [ngClass]="{'element-error': veiculo.get('modeloId')?.invalid && veiculo.get('modeloId')?.touched}"
+              class="form-control" formControlName="modeloId" required>
+                <option value=''  selected>Selecione</option>
+                <option *ngFor="let item of modeloResult" [value]="item.id">{{ item.nome }}</option>
+              </select>
+            </div>
+  
+            <div class="form-group col-4" >
+              <label class="mb-2" for="locadoraId">Locadora</label>
+              <select 
+              [ngClass]="{'element-error': veiculo.get('locadoraId')?.invalid && veiculo.get('locadoraId')?.touched}"
+              class="form-control" formControlName="locadoraId" required>
+                <option value=''  selected>Selecione</option>
+                <option *ngFor="let item of locadoraResult" [value]="item.id">{{ item.nomeFantasia }}</option>
+              </select>
+         
+            </div>
+          </div>
+          <div class="actions-column text-end">
+            <button type="submit" [ngClass]="isEdicao ? 'btn-primary' : 'btn-success'" class="btn mt-3 ">
+              <i [ngClass]="isEdicao ? 'bi bi-pencil' : 'bi bi-plus'"></i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <div *ngIf="showModal" class="modal">
+      <div class="modal-content">
+
+        <ng-content></ng-content>
+        <button >Fechar</button>
+      </div>
+    </div> 
+  </div>
+
+
+
+

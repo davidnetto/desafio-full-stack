@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <table class="col-12">
+        <tr>
+          <h2>{{ isEdicao ? 'Editar Locadora' : 'Cadastrar Locadora' }}</h2>
+
+          <td class="actions-column text-end">
+            <button (click)="listagem()" class=" btn btn-info text-white ">
+              <i class="fas fa-list"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+
+      <form [formGroup]="locadora" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        <div class="row">
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="nomeFantasia">Nome Fantasia</label>
+            <input
+              [ngClass]="{'element-error': locadora.get('nomeFantasia')?.invalid && locadora.get('nomeFantasia')?.touched}"
+              type="text" class="form-control" id="nomeFantasia" formControlName="nomeFantasia" required>
+          </div>
+
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="razaoSocial">Razão Social:</label>
+            <input
+              [ngClass]="{'element-error': locadora.get('razaoSocial')?.invalid && locadora.get('razaoSocial')?.touched}"
+              type="text" class="form-control" id="razaoSocial" formControlName="razaoSocial" required>
+          </div>
+
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="cnpj">CNPJ:</label>
+            <input appNumeric [ngClass]="{'element-error': locadora.get('cnpj')?.invalid && locadora.get('cnpj')?.touched}"
+              type="text" class="form-control" id="cnpj" formControlName="cnpj" required>
+          </div>
+
+
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="email">Email:</label>
+            <input [ngClass]="{'element-error': locadora.get('email')?.invalid && locadora.get('email')?.touched}"
+              type="text" class="form-control" id="email" formControlName="email" required>
+          </div>
+
+
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="telefone">Telefone:</label>
+            <input appNumeric [ngClass]="{'element-error': locadora.get('telefone')?.invalid && locadora.get('telefone')?.touched}"
+              type="text" class="form-control" id="telefone" formControlName="telefone" required>
+          </div>
+        </div>
+
+        <h2>Endereço</h2>
+        <div class="row">
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="cep">CEP:</label>
+            <input appNumeric [ngClass]="{'element-error': locadora.get('cep')?.invalid && locadora.get('cep')?.touched}" type="text"
+              class="form-control" id="cep" formControlName="cep" required>
+          </div>
+
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="rua">Rua:</label>
+            <input [ngClass]="{'element-error': locadora.get('rua')?.invalid && locadora.get('rua')?.touched}" type="text"
+              class="form-control" id="rua" formControlName="rua" required>
+          </div>
+  
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="numero">Número:</label>
+            <input appNumeric [ngClass]="{'element-error': locadora.get('numero')?.invalid && locadora.get('numero')?.touched}"
+              type="text" class="form-control" id="numero" formControlName="numero" required>
+          </div>
+  
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="bairro">Bairro:</label>
+            <input [ngClass]="{'element-error': locadora.get('bairro')?.invalid && locadora.get('bairro')?.touched}"
+              type="text" class="form-control" id="bairro" formControlName="bairro" required>
+          </div>
+  
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="estado">Estado:</label>
+            <input [ngClass]="{'element-error': locadora.get('estado')?.invalid && locadora.get('estado')?.touched}"
+              type="text" class="form-control" id="estado" formControlName="estado" required>
+          </div>
+  
+          <div class="form-group mb-3 col-4">
+            <label class="mb-2" for="cidade">Cidade:</label>
+            <input [ngClass]="{'element-error': locadora.get('cidade')?.invalid && locadora.get('cidade')?.touched}"
+              type="text" class="form-control" id="cidade" formControlName="cidade" required>
+          </div>
+        </div>
+
+        <div class="actions-column text-end mb-3">
+          <button type="submit" [ngClass]="isEdicao ? 'btn-primary' : 'btn-success'" class="btn mt-3">
+            <i [ngClass]="isEdicao ? 'bi bi-pencil' : 'bi bi-plus'"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="showModal" class="modal">
+    <div class="modal-content">
+      <!-- Conteúdo do modal -->
+      <ng-content></ng-content>
+      <button>Fechar</button>
+    </div>
+  </div>
+</div>

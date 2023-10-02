@@ -1,0 +1,15 @@
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\bin\Debug\net6.0\CleanCar.Application.deps.json
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\bin\Debug\net6.0\CleanCar.Application.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\bin\Debug\net6.0\CleanCar.Application.pdb
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\bin\Debug\net6.0\CleanCar.Domain.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\bin\Debug\net6.0\CleanCar.Domain.pdb
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.csproj.AssemblyReference.cache
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.AssemblyInfoInputs.cache
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.AssemblyInfo.cs
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.csproj.CoreCompileInputs.cache
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.csproj.CopyComplete
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\refint\CleanCar.Application.dll
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\CleanCar.Application.pdb
+C:\Users\David\Documents\repos\CleanCar.Domain\CleanCar.Application\obj\Debug\net6.0\ref\CleanCar.Application.dll
